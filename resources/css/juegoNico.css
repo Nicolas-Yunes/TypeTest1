@@ -1,15 +1,16 @@
 .juegoNico {
-    font-family: Arial, sans-serif;
+    font-family: "Roboto", sans-serif;
     max-width: 100%;
     padding-left: 100px;
     padding-top: 50px;
     padding-bottom: 50px;
-    background-color: lightgray;
+    background-color: var(--bg-white);
     font-weight: 600;
+    color: var(--black);
 }
 
 #start-button {
-    background-color: #FCC31E; 
+    background-color: #FF232B; 
     border: none;
     color: white;
     padding: 5px 15px;
@@ -21,10 +22,6 @@
     margin-bottom: 5px;
 }
 
-#frase-display {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
 #timer {   
     font-size: 24px;
     margin-bottom: 20px;
@@ -33,7 +30,7 @@
     width: 80%;
     height: 100px;
     font-size: 24px;
-    background-color: white;
+    background-color: lightblue;
     font-weight: 300;
     border-radius: 10px;
     padding-left: 10px;
@@ -42,4 +39,90 @@
 #results {
     font-size: 24px;
     margin-top: 20px;
+}
+
+
+.explicacion {
+    content: "";
+    display: table;
+    text-align: justify;
+    max-width: 80%;
+}
+
+#frase-display {
+    font-size: 24px;
+    margin-bottom: 20px;
+    padding-top: 40px;
+    text-align: left;
+}
+
+.texto {
+    float: left;
+    max-width: 60%;
+    padding-right: 80px;
+}
+
+.info {
+    background-color: var(--deep-black);
+    border: solid var(--deep-black);
+    border-radius: 5px;
+    color: var(--white);
+    font-weight: 400;
+    padding: 10px;
+}
+
+.resaltar { 
+    color: var(--blue);
+}
+
+
+#imagen {
+    float: left;
+    border: solid red;
+    max-width: 15%;
+}
+
+
+@media only screen and (max-width: 768px) {
+    #imagen {
+        float: none;
+        max-width: 20%;
+    }
+    .texto {
+        float: none;
+        max-width: 90%;
+        padding-bottom: 20px;
+        text-align: justify;
+    }
+    #frase-display {
+        font-size: 24px;
+        margin-bottom: 20px;
+        float: none;
+        text-align: left;
+    }
+
+    #input-area {
+        padding-top: 100px;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+
+    #imagen {
+        float: none;
+        max-width: 30%;
+    }
+
+    .texto {
+        float: none;
+        max-width: 100%;
+        text-align: justify;
+    }
+
+    .explicacion {
+        max-width: 100%;
+    }
+    #frase-display {
+       max-width: 90%;
+    }
 }

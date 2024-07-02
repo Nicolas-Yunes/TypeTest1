@@ -4,7 +4,7 @@
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
   overflow-x: hidden;
-  color: var(--black);
+  /* color: var(--black); */
 }
 
 :root {
@@ -37,6 +37,7 @@ body {
   position: fixed;
   backdrop-filter: blur(5px);
   z-index: 10;
+  background-color: none;
 }
 
 .nav-bar-container .nav-left {
@@ -168,6 +169,7 @@ body {
   .nav-bar-container {
     padding: 0 150px;
     height: 80px;
+    background-color: #ffffffe3;
   }
   .nav-bar-container .nav-right {
     display: flex;

@@ -44,13 +44,29 @@ const timerDisplay = document.getElementById('timer');
 const inputArea = document.getElementById('input-area');
 const resultsDisplay = document.getElementById('results');
 const startButton = document.getElementById('start-button');
+const imagenSemaforo = document.getElementById('imagen');
 
-startButton.addEventListener('click', startGame);
+startButton.addEventListener('click', waitGame);
 
 inputArea.addEventListener('keydown', handleEnterKey);
 
-function startGame() {
+function waitGame() {
+    imagenSemaforo.src = "resources/images/juego/semaforoAmarillo.jpg"
+    imagenSemaforo.style.border = "solid yellow";
+    setTimeout(() => {startGame()}, 2000)
     startButton.disabled = true;
+    startButton.style.backgroundColor = "#FCC31E";
+    startButton.textContent = "Espere..."
+}
+
+
+
+function startGame() {
+    imagenSemaforo.src = "resources/images/juego/semaforoVerde.jpg"
+    imagenSemaforo.style.border = "solid green";
+    startButton.disabled = true;
+    startButton.style.backgroundColor = "green";
+    startButton.textContent = "Jugando..."
     inputArea.disabled = false;
     inputArea.value = "";
     correctChars = 0;
@@ -106,6 +122,20 @@ function endGame() {
     const totalPalabras = totalCorrectChars / 5; // 5 es el promedio de .length de las palabras
     const wpm = totalPalabras * 2;
     const accuracy = (totalCorrectChars / totalChars) * 100;
-    resultsDisplay.textContent = `WPM: ${wpm.toFixed(2)}, Accuracy: ${accuracy.toFixed(2)}%`;
+    resultsDisplay.textContent = `Palabras por Minuto: ${wpm.toFixed(2)}, Precisión: ${accuracy.toFixed(2)}%`;
+    if (accuracy < 25) {
+        imagenSemaforo.src = "resources/images/juego/sadCar.png"
+        imagenSemaforo.style.border = "solid red";
+        mostrarFrase.textContent = "Precisión menor al 25%, ¡inténtalo de nuevo!";
+    } else if (accuracy > 25 && accuracy < 70) {
+        imagenSemaforo.src = "resources/images/juego/happyCar.png"
+        imagenSemaforo.style.border = "solid yellow";
+        mostrarFrase.textContent = "¡Gracias por jugar!";
+    } else if (accuracy > 70) {
+        imagenSemaforo.src = "resources/images/juego/autoDedoArriba.png"
+        imagenSemaforo.style.border = "solid green";
+        mostrarFrase.textContent = "¡¡Felicitaciones!! ¡Excelente precisión!";
+    }
     startButton.disabled = false;
+    startButton.textContent = "Volver a Jugar"
 }

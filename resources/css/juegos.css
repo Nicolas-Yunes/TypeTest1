@@ -7,7 +7,7 @@
     align-items: center;
     color: white;
     font-weight: bold; 
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
   }
   
   .banner-container .banner {
@@ -24,6 +24,7 @@
     font-size: 1rem;
     margin: 5px 0 0;
     color: white;
+    padding-bottom: 10px;
   }
   
   .games-section {
@@ -76,6 +77,7 @@
   .banner-container {
     position: relative;
     z-index: 0;
+    padding-bottom: 10px;
   }
   
   .nav-bar-container {
@@ -85,9 +87,15 @@
 
 
   @media only screen and (max-width: 319px) {
+    .banner-container h1 {
+      font-size: 3rem;
+    }
 }
 
 @media only screen and (min-width: 320px) and (max-width: 479px) {
+  .banner-container h1 {
+    font-size: 4rem;
+  }
 }
 
 @media only screen and (min-width: 768px) {

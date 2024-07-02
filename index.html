@@ -5,12 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="resources/images/logos/logo-seguridad-vial.png" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="resources/css/styles.css">
   <link rel="stylesheet" href="resources/css/juegos.css">
   <link rel="stylesheet" href="resources/css/juegoNico.css">
   <title>Juegos - Seguridad Vial</title>
 </head>
 <body>
+  <div class="nav-bar-container">
+    <div class="nav-left">
+      <img src="resources/images/logos/logo-seguridad-vial.png" alt="Logo Seguridad Vial" srcset="">
+    </div>
+    <ul class="nav-right">
+      <li><a href="https://yuchan45.github.io/ddw-tp-equipo10/">Inicio</a></li>
+      <li><a href="https://yuchan45.github.io/ddw-tp-equipo10/#goal">Objetivo</a></li>
+      <li><a href="https://yuchan45.github.io/ddw-tp-equipo10/views/integrantes.html">Integrantes</a></li>
+      <li><a href="https://yuchan45.github.io/ddw-tp-equipo10/views/avances.html">Avances</a></li>
+      <li><a href="https://yuchan45.github.io/ddw-tp-equipo10/views/juegos.html">Juegos</a></li>
+    </ul>
+    <div class="menu-btns">
+      <i class="fa-bars fa" id="menu"></i>
+    </div>
+  </div>
+  <div class="menu-overlay hidden-menu">
+    <ul class="items">
+      <li><a href="https://yuchan45.github.io/ddw-tp-equipo10/">Inicio</a></li>
+      <li><a href="https://yuchan45.github.io/ddw-tp-equipo10/#goal">Objetivo</a></li>
+      <li><a href="https://yuchan45.github.io/ddw-tp-equipo10/views/integrantes.html">Integrantes</a></li>
+      <li><a href="https://yuchan45.github.io/ddw-tp-equipo10/views/avances.html">Avances</a></li>
+      <li><a href="https://yuchan45.github.io/ddw-tp-equipo10/views/juegos.html">Juegos</a></li>
+    </ul>
+  </div>
   <section class="banner-container">
     <div class="banner">
       <h1>
@@ -20,15 +47,33 @@
     </div>
   </section>
 
-<section class="juegoNico">
-    <div id="frase-display">Oprime "Start" para iniciar</div>
-    <button id="start-button">Start</button>
-    <div id="timer">Tiempo: 30s</div>
+
+  <section class="juegoNico">
+    <div class="explicacion">
+      <section class="texto">
+        <div class="info">
+        <h2>¿Cómo jugar?</h2>
+        <br>
+        <p>Una vez que oprimas el botón "Empezar" se va a mostrar una frase,
+          deberá escribir la frase en pantalla, luego presionar la tecla "Enter" para pasar a la próxima frase.
+          La idea sería escribir la mayor cantidad de frases en 30 segundos. <span class="resaltar">¡Recuerda ser rápido y preciso!</span></p>
+        </div>
+          <div>
+            <div id="frase-display">Oprime "Empezar" para iniciar</div>
+            <button id="start-button">Empezar</button>
+            <div id="timer">Tiempo: 30s</div>
+      </section>
+            <img id="imagen" src="resources/images/juego/semaforoRojo.jpg"></img>
+          </div>
+    </div>
+
     <textarea id="input-area" disabled></textarea>
     <div id="results"></div>
 
     <script src="resources/js/juegoNico.js"></script>
 </section>
+
+
 
   <footer class="footer-container">
     <div class="top-row">
@@ -38,6 +83,6 @@
     </div>
     <p>Derechos reservados - Sitio desarrollado para uso educativo</p>
   </footer>
-  <script src="../resources/js/navBehaviour.js"></script>
+  <script src="resources/js/navBehaviour.js"></script>
 </body>
 </html>
